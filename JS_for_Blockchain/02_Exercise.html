@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>JS for blockchain developers - Functions</title>
+  </head>
+  <body>
+
+
+    <script>
+
+      function greet(name) {
+        document.write("<h3>Greetings " + name + "</h3>");
+      }
+
+      greet("Iker");
+
+      function sayHello() {
+        var message = "Hello";
+        console.log(message)
+      }
+
+      sayHello();
+
+      /*
+      Can't use the message variable. The scope it's the Functions
+      We can use global variables. Be carefull with this.
+      */
+
+      var globalVariable = "Global text";
+
+      function multiply (a, b, c) {
+        return a * b * c;
+      }
+
+      console.log(multiply(2, 5, 6));
+    </script>
+
+
+
+  </body>
+</html>
