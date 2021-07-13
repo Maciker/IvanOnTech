@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>JS for blockchain developers - Dynamic lists</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <h1>My favorite fruits</h1>
+    <ol id="fruitList">
+    </ol>
+
+    <input id="textInput" placeholder="Write a fruit" type="text"/>
+    <button id="addButton">Add fruit</button>
+    <script>
+
+      var fruits = [];
+      console.log(fruits);
+
+      $("#addButton").click( () => {
+        var fruitText = $("#textInput").val();
+        fruits.push(fruitText);
+        redrawList()
+      })
+
+      function redrawList(){
+        var list = $("#fruitList");
+        list.html("");
+
+        $.each(fruits, (index, value) => {
+            var listItem = $("<li/>").text(value).appendTo(list);
+        });
+      }
+
+      redrawList();
+    </script>
+  </body>
+</html>

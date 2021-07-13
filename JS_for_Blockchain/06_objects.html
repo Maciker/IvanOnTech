@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>JS for blockchain developers - Objects</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <script>
+
+      var carObject = {
+        manufacturer: "Volvo",
+        year: 2009,
+        distance: 1000
+      };
+
+      console.log(carObject);
+      console.log(carObject.manufacturer);
+      console.log(carObject.year);
+      console.log(carObject.distance);
+
+      var car1 = {
+        manufacturer: "Volvo",
+        year: 2009,
+        distance: 100000,
+        alertFunc: () => {alert("I'm a function")}
+      };
+
+      var car2 = {
+        manufacturer: "BMW",
+        year: 2021,
+        distance: 0
+      };
+
+      var car3 = {
+        manufacturer: "Mercedes",
+        year: 2017,
+        distance: 20000
+      };
+
+      var cars = [car1, car2, car3];
+
+      console.log(cars);
+
+      car1.alertFunc();
+
+    </script>
+  </body>
+</html>
