@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>JS for blockchain developers - Dynamic lists</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+
+    <h1>My favorite fruits</h1>
+    <ol id="fruitList">
+    </ol>
+
+    <input id="nameInput" placeholder="Write a fruit name" type="text"/>
+    <input id="colorInput" placeholder="Write the fruit color" type="text"/>
+    <input id="weightInput" placeholder="Write the fruit weight" type="text"/>
+    <button id="addButton">Add fruit</button>
+    <script>
+
+      var fruits = [{name: "Apple", color: "Green", weight: 10},
+                    {name: "Orange", color: "Orange", weight: 13},
+                    {name: "Banana", color: "Yellow", weight: 20}
+      ];
+
+
+      $("#addButton").click( () => {
+        var fruitName = $("#nameInput").val();
+        var fruitColor = $("#colorInput").val();
+        var fruitWeight = $("#weightInput").val();
+
+        var fruitObject = { name: fruitName, color: fruitColor, weight: fruitWeight};
+
+        fruits.push(fruitObject);
+        redrawList()
+      })
+
+      function redrawList(){
+        var list = $("#fruitList");
+        list.html("");
+
+        $.each(fruits, (index, value) => {
+            var listItem = $("<li/>").text("Fruit: "+ value.name + " color: " + value.color + " weight: " + value.weight).appendTo(list);
+        });
+      }
+
+      redrawList();
+    </script>
+  </body>
+</html>
