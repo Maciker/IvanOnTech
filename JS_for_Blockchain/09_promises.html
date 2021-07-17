@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>JS for blockchain developers - Promises</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <button id="theButton">The Button</button>
+  <script>
+
+    function constructTimeout(){
+      return new Promise((resolve, reject) => {
+        setTimeout(resolve, 2000);
+      });
+    }
+
+    // Use promises to resolve the callback hell
+    constructTimeout().then(() => {
+      console.log("Resolve called!!")
+      return constructTimeout();
+    }).then(() => {
+      console.log("Second resolve called!!");
+    });
+
+
+  </script>
+</body>
+</html>
